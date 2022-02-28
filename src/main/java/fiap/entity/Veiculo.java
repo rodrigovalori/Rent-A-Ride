@@ -10,6 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import fiap.entity.enums.Cores;
+import fiap.entity.enums.Opcionais;
+import fiap.entity.enums.TipoCombustivel;
+import fiap.entity.enums.TipoTransmissao;
+import fiap.entity.enums.TipoVeiculo;
+
 @Entity
 @Table(name = "tb_veiculo")
 public class Veiculo {
