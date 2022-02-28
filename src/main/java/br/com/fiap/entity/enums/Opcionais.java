@@ -1,4 +1,4 @@
-package fiap.entity.enums;
+package br.com.fiap.entity.enums;
 
 public enum Opcionais {
 	

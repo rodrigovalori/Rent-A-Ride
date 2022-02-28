@@ -1,4 +1,4 @@
-package fiap.entity;
+package br.com.fiap.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

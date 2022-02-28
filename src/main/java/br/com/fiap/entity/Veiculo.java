@@ -1,4 +1,4 @@
-package fiap.entity;
+package br.com.fiap.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,11 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import fiap.entity.enums.Cores;
-import fiap.entity.enums.Opcionais;
-import fiap.entity.enums.TipoCombustivel;
-import fiap.entity.enums.TipoTransmissao;
-import fiap.entity.enums.TipoVeiculo;
+import br.com.fiap.entity.enums.Cores;
+import br.com.fiap.entity.enums.Opcionais;
+import br.com.fiap.entity.enums.TipoCombustivel;
+import br.com.fiap.entity.enums.TipoTransmissao;
+import br.com.fiap.entity.enums.TipoVeiculo;
 
 @Entity
 @Table(name = "tb_veiculo")

@@ -1,4 +1,4 @@
-package fiap.teste;
+package br.com.fiap.teste;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;

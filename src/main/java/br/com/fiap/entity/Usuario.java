@@ -1,4 +1,4 @@
-package fiap.entity;
+package br.com.fiap.entity;
 
 import java.util.Calendar;
 
