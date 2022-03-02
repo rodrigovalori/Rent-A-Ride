@@ -7,10 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "tb_usuario")
 public class Usuario {
 
@@ -46,6 +49,17 @@ public class Usuario {
 			Integer numeroCNH) {
 		super();
 		this.id = id;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.dataNascimento = dataNascimento;
+		this.telefone = telefone;
+		this.numeroCNH = numeroCNH;
+	}
+	
+	public Usuario(String nome, String sobrenome, String email, Calendar dataNascimento, Integer telefone,
+			Integer numeroCNH) {
+		super();
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
