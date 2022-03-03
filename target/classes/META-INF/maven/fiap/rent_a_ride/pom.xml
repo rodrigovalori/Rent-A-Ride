@@ -16,7 +16,7 @@
 			<artifactId>jdbc.driver</artifactId>
 			<version>12</version>
 			<scope>system</scope>
-			<systemPath>/Users/rodrigo.valori/.m2/ojdbc8-full/ojdbc8.jar</systemPath>
+			<systemPath>C:/Users/jokee/Downloads/ojdbc8.jar</systemPath>
 		</dependency>
 	</dependencies>
 	
