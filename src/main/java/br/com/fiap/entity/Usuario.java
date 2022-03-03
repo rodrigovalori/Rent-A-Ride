@@ -42,18 +42,6 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(Integer id, String nome, String sobrenome, String email, Calendar dataNascimento, Integer telefone,
-			Integer numeroCNH) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.email = email;
-		this.dataNascimento = dataNascimento;
-		this.telefone = telefone;
-		this.numeroCNH = numeroCNH;
-	}
-
 	public Usuario(String nome, String sobrenome, String email, Calendar dataNascimento, Integer telefone,
 			Integer numeroCNH) {
 		super();
