@@ -19,10 +19,10 @@ public class TesteMerge {
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			if (em != null) {
+				em.close();
+			}
 		}
-		if (em != null) {
-			em.close();
-		}
-		System.exit(0);
 	}
 }
