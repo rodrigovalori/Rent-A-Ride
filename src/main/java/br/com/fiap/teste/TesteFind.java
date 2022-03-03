@@ -20,11 +20,16 @@ public class TesteFind {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+
+			if (em != null && em.getTransaction().isActive()) {
+				em.getTransaction().rollback();
+			}
+
 		} finally {
 			if (em != null) {
 				em.close();
+				
 			}
 		}
-
 	}
 }

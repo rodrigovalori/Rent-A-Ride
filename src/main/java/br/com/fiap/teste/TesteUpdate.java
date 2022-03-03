@@ -12,27 +12,28 @@ public class TesteUpdate {
 		EntityManager em = null;
 
 		try {
-
 			em = Persistence.createEntityManagerFactory("rent-a-ride").createEntityManager();
 
 			Usuario usuario = em.find(Usuario.class, 1);
 
 			em.getTransaction().begin();
 
-			usuario.setNome("Escolinha 1 - Alterado");
+			usuario.setNome("Teste UPDATE");
 
 			em.getTransaction().commit();
 
 		} catch (Exception e) {
 			e.printStackTrace();
+
 			if (em != null && em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
 			}
+
 		} finally {
 			if (em != null) {
 				em.close();
+				
 			}
 		}
-
 	}
 }

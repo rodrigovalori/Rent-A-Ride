@@ -12,24 +12,28 @@ public class TesteRemove {
 		EntityManager em = null;
 
 		try {
-
 			em = Persistence.createEntityManagerFactory("rent-a-ride").createEntityManager();
+
 			Usuario usuario = em.find(Usuario.class, 1);
 
 			em.getTransaction().begin();
+
 			em.remove(usuario);
+
 			em.getTransaction().commit();
 
 		} catch (Exception e) {
 			e.printStackTrace();
+
 			if (em != null && em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
 			}
+
 		} finally {
 			if (em != null) {
 				em.close();
+				
 			}
 		}
-
 	}
 }
