@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -31,6 +33,14 @@ public class Reserva {
 
 	@Column(name = "ds_condicoes")
 	private String condicoes;
+
+	@JoinColumn(name = "id_locatario")
+	@ManyToOne
+	private Locatario locatario;
+
+	@JoinColumn(name = "id_veiculo")
+	@ManyToOne
+	private Veiculo veiculo;
 
 	public Reserva() {
 		super();

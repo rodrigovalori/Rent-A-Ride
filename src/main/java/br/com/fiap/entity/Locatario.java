@@ -1,10 +1,15 @@
 package br.com.fiap.entity;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,6 +22,13 @@ public class Locatario {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "locatario")
 	@Column(name = "id_locatario")
 	private Integer id;
+
+	@OneToOne
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
+
+	@OneToMany(mappedBy = "locatario")
+	private Collection<Reserva> reserva;
 
 	public Locatario() {
 		super();

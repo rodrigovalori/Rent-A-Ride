@@ -1,12 +1,15 @@
 package br.com.fiap.entity;
 
 import java.util.Calendar;
+import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -37,6 +40,15 @@ public class Usuario {
 
 	@Column(name = "nr_cnh", nullable = false)
 	private Integer numeroCNH;
+
+	@OneToMany(mappedBy = "usuario")
+	private Collection<DadosPagamento> dadosPagamento;
+
+	@OneToOne(mappedBy = "usuario")
+	private Locador locador;
+
+	@OneToOne(mappedBy = "usuario")
+	private Locatario locatario;
 
 	public Usuario() {
 		super();
