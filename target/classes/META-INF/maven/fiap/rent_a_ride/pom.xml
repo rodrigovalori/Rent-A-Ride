@@ -14,11 +14,10 @@
 		</dependency>
 
 		<dependency>
-			<groupId>oracle</groupId>
-			<artifactId>jdbc.driver</artifactId>
-			<version>12</version>
-			<scope>system</scope>
-			<systemPath>/Users/rodrigo.valori/.m2/ojdbc8-full/ojdbc8.jar</systemPath>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>RELEASE</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 

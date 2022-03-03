@@ -11,7 +11,7 @@ public class TesteFind {
 
 		EntityManager em = Persistence.createEntityManagerFactory("rent-a-ride").createEntityManager();
 
-		Usuario usuario = em.find(Usuario.class, 1);
+		Usuario usuario = em.find(Usuario.class, 2);
 
 		System.out.println(usuario.getId() + " " + usuario.getNome());
 
