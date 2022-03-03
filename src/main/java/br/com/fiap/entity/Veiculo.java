@@ -69,13 +69,17 @@ public class Veiculo {
 	@Column(name = "tp_cores", nullable = false)
 	private Cores cores;
 
+	@Column(name = "vl_diaria", nullable = false)
+	private double valorDiaria;
+
 	public Veiculo() {
 		super();
 	}
 
 	public Veiculo(Integer id, TipoVeiculo tipoVeiculo, String marca, String modelo, Integer anoModelo,
 			Integer anoFabricacao, Integer cilindradas, TipoCombustivel tipoCombustivel, Integer quilometragem,
-			TipoTransmissao tipoTransmissao, String descricao, Opcionais opcionais, String placa, Cores cores) {
+			TipoTransmissao tipoTransmissao, String descricao, Opcionais opcionais, String placa, Cores cores,
+			double valorDiaria) {
 		super();
 		this.id = id;
 		this.tipoVeiculo = tipoVeiculo;
@@ -91,6 +95,7 @@ public class Veiculo {
 		this.opcionais = opcionais;
 		this.placa = placa;
 		this.cores = cores;
+		this.valorDiaria = valorDiaria;
 	}
 
 	public Integer getId() {
@@ -203,6 +208,14 @@ public class Veiculo {
 
 	public void setCores(Cores cores) {
 		this.cores = cores;
+	}
+
+	public double getValorDiaria() {
+		return valorDiaria;
+	}
+
+	public void setValorDiaria(double valorDiaria) {
+		this.valorDiaria = valorDiaria;
 	}
 
 }

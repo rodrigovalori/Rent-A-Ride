@@ -1,5 +1,7 @@
 package br.com.fiap.entity;
 
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,6 +23,9 @@ public class DadosPagamento {
 	@Column(name = "nr_cartao", nullable = false)
 	private Integer numeroCartao;
 
+	@Column(name = "dt_validade", nullable = false)
+	private Calendar dataValidade;
+
 	@Column(name = "nm_titular", nullable = false)
 	private String nomeTitular;
 
@@ -34,10 +39,12 @@ public class DadosPagamento {
 		super();
 	}
 
-	public DadosPagamento(Integer id, Integer numeroCartao, String nomeTitular, Integer codigoSeguranca, Integer cpf) {
+	public DadosPagamento(Integer id, Integer numeroCartao, Calendar dataValidade, String nomeTitular,
+			Integer codigoSeguranca, Integer cpf) {
 		super();
 		this.id = id;
 		this.numeroCartao = numeroCartao;
+		this.dataValidade = dataValidade;
 		this.nomeTitular = nomeTitular;
 		this.codigoSeguranca = codigoSeguranca;
 		this.cpf = cpf;
@@ -57,6 +64,14 @@ public class DadosPagamento {
 
 	public void setNumeroCartao(Integer numeroCartao) {
 		this.numeroCartao = numeroCartao;
+	}
+
+	public Calendar getDataValidade() {
+		return dataValidade;
+	}
+
+	public void setDataValidade(Calendar dataValidade) {
+		this.dataValidade = dataValidade;
 	}
 
 	public String getNomeTitular() {
