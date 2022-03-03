@@ -5,26 +5,24 @@ import javax.persistence.Persistence;
 
 import br.com.fiap.entity.Usuario;
 
-public class TesteFind {
+public class TesteMerge {
 
 	public static void main(String[] args) {
 
 		EntityManager em = null;
-
 		try {
 			em = Persistence.createEntityManagerFactory("rent-a-ride").createEntityManager();
-
-			Usuario usuario = em.find(Usuario.class, 1);
-
-			System.out.println(usuario.getId() + " " + usuario.getNome());
-
+			Usuario usuario = em.find(Usuario.class, 5);
+			usuario.setNome("Bar do Joao");
+			em.merge(usuario);
+			em.getTransaction().begin();
+			em.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			if (em != null) {
-				em.close();
-			}
 		}
-
+		if (em != null) {
+			em.close();
+		}
+		System.exit(0);
 	}
 }

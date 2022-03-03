@@ -5,21 +5,26 @@ import javax.persistence.Persistence;
 
 import br.com.fiap.entity.Usuario;
 
-public class TesteFind {
+public class TesteRemove {
 
 	public static void main(String[] args) {
 
 		EntityManager em = null;
 
 		try {
-			em = Persistence.createEntityManagerFactory("rent-a-ride").createEntityManager();
 
+			em = Persistence.createEntityManagerFactory("rent-a-ride").createEntityManager();
 			Usuario usuario = em.find(Usuario.class, 1);
 
-			System.out.println(usuario.getId() + " " + usuario.getNome());
+			em.getTransaction().begin();
+			em.remove(usuario);
+			em.getTransaction().commit();
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			if (em != null && em.getTransaction().isActive()) {
+				em.getTransaction().rollback();
+			}
 		} finally {
 			if (em != null) {
 				em.close();

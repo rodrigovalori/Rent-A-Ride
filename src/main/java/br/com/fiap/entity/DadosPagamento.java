@@ -45,15 +45,15 @@ public class DadosPagamento {
 		super();
 	}
 
-	public DadosPagamento(Integer id, Integer numeroCartao, Calendar dataValidade, String nomeTitular,
-			Integer codigoSeguranca, Integer cpf) {
+	public DadosPagamento(Integer numeroCartao, Calendar dataValidade, String nomeTitular, Integer codigoSeguranca,
+			Integer cpf, Usuario usuario) {
 		super();
-		this.id = id;
 		this.numeroCartao = numeroCartao;
 		this.dataValidade = dataValidade;
 		this.nomeTitular = nomeTitular;
 		this.codigoSeguranca = codigoSeguranca;
 		this.cpf = cpf;
+		this.usuario = usuario;
 	}
 
 	public Integer getId() {

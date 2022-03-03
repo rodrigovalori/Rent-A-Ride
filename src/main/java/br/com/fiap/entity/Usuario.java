@@ -1,8 +1,9 @@
 package br.com.fiap.entity;
 
 import java.util.Calendar;
-import java.util.Collection;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,8 +42,8 @@ public class Usuario {
 	@Column(name = "nr_cnh", nullable = false)
 	private Integer numeroCNH;
 
-	@OneToMany(mappedBy = "usuario")
-	private Collection<DadosPagamento> dadosPagamento;
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	private List<DadosPagamento> dadosPagamento;
 
 	@OneToOne(mappedBy = "usuario")
 	private Locador locador;
@@ -52,6 +53,18 @@ public class Usuario {
 
 	public Usuario() {
 		super();
+	}
+
+	public Usuario(Integer id, String nome, String sobrenome, String email, Calendar dataNascimento, Integer telefone,
+			Integer numeroCNH) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.dataNascimento = dataNascimento;
+		this.telefone = telefone;
+		this.numeroCNH = numeroCNH;
 	}
 
 	public Usuario(String nome, String sobrenome, String email, Calendar dataNascimento, Integer telefone,
