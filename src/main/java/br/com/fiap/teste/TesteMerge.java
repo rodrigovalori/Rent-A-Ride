@@ -3,6 +3,7 @@ package br.com.fiap.teste;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+import br.com.fiap.entity.DadosPagamento;
 import br.com.fiap.entity.Usuario;
 
 public class TesteMerge {
@@ -16,11 +17,15 @@ public class TesteMerge {
 
 			Usuario usuario = em.find(Usuario.class, 1);
 
-			usuario.setNome("Teste MERGE");
+			DadosPagamento dadosPagamento = em.find(DadosPagamento.class, 1);
+
+			usuario.setNome("Ciclano");
+			dadosPagamento.setNomeTitular("Ciclano da Silva");
 
 			em.getTransaction().begin();
 
 			em.merge(usuario);
+			em.merge(dadosPagamento);
 
 			em.getTransaction().commit();
 

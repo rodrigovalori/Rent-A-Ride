@@ -3,6 +3,7 @@ package br.com.fiap.teste;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+import br.com.fiap.entity.DadosPagamento;
 import br.com.fiap.entity.Usuario;
 
 public class TesteUpdate {
@@ -15,10 +16,13 @@ public class TesteUpdate {
 			em = Persistence.createEntityManagerFactory("rent-a-ride").createEntityManager();
 
 			Usuario usuario = em.find(Usuario.class, 1);
+			
+			DadosPagamento dadosPagamento = em.find(DadosPagamento.class, 1);
 
 			em.getTransaction().begin();
 
-			usuario.setNome("Teste UPDATE");
+			usuario.setEmail("ciclano@gmail.com");
+			dadosPagamento.setCodigoSeguranca(538);
 
 			em.getTransaction().commit();
 
